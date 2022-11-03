@@ -4,7 +4,34 @@ from datetime import datetime
 from re import sub
 from os import mkdir
 from os.path import exists
-from sys import argv
+from sys import argv, exit
+
+def usage(argv:list):
+    # error message if too many arguments are given
+    if len(argv) > 2:
+        print('\033[31mError\033[0m: Too many arguments provided')
+    
+    # error message if invalid option provided
+    else: 
+        print(f'\033[31mError\033[0m: Unrecognized option: {argv[1]}')
+    
+    # spacing
+    print()
+
+    # print out usage
+    print('\033[33mUsage\033[0m:')
+    print(f'{"./gen_templates.py": ^27}--> generates template files for the current week')
+    print(f'{"./gen_templates.py next": ^27}--> generates template files for the next week')
+    print('More info in gen_templates.README')
+
+
+# check if user is using 'next' option
+if len(argv) == 1 or argv[1] == 'next' and len(argv) == 2:
+    next = len(argv) == 2
+
+# user has provided invalid input
+else:
+    usage(argv)
 
 
 # commands for unzipping the templates
