@@ -6,6 +6,7 @@ from os import mkdir
 from os.path import exists
 from sys import argv, exit
 
+# function handles printing error messages as well as printing out the usage
 def usage(argv:list):
     # error message if too many arguments are given
     if len(argv) > 2:
@@ -78,7 +79,7 @@ days_of_week = tuple(datetime.fromisocalendar(year, week_number+next, i).strftim
 date_file_names = tuple(datetime.fromisocalendar(year, week_number+next, i).strftime('%-m-%-d') for i in range(1, 6))
 
 
-# open the 'daily.html' file with read permissions only
+# open the 'daily.html' file and read its contents
 with open('daily.html', 'r') as dhtml:
     
     # read in all contents of the file
@@ -95,7 +96,7 @@ with open('daily.html', 'r') as dhtml:
         with open(f'{dir_name}/{file_name}.html', 'w') as newfile:
             newfile.write(updated_html)
 
-
+# open weekly.html file and read in its contents
 with open('weekly.html', 'r') as whtml:
 
     # read in all contents of the file
