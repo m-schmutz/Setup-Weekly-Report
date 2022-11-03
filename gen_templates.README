@@ -1,0 +1,5 @@
+gen_templates.py: Generates template html files for the daily and weekly reports
+
+Script will prompt user for a directory name in which the template files will be placed
+
+Next, the user will be prompted for a team name to fill in the template files

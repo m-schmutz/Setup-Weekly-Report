@@ -4,36 +4,7 @@ from datetime import datetime
 from re import sub
 from os import mkdir
 from os.path import exists
-from sys import argv, exit
-
-# function handles printing error messages as well as printing out the usage
-def usage(argv:list):
-    # error message if too many arguments are given
-    if len(argv) > 2:
-        print('\033[31mError\033[0m: Too many arguments provided')
-    
-    # error message if invalid option provided
-    else: 
-        print(f'\033[31mError\033[0m: Unrecognized option: {argv[1]}')
-    
-    # spacing
-    print()
-
-    # print out usage
-    print('\033[33mUsage\033[0m:')
-    print(f'{"./gen_templates.py": ^27}--> generates template files for the current week')
-    print(f'{"./gen_templates.py next": ^27}--> generates template files for the next week')
-    print('More info in gen_templates.README')
-
-
-# check if user is using 'next' option
-if len(argv) == 1 or argv[1] == 'next' and len(argv) == 2:
-    next = len(argv) == 2
-
-# user has provided invalid input
-else:
-    usage(argv)
-
+from sys import exit
 
 # commands for unzipping the templates
 UNZIP_DAILY = ('unzip', 'daily.zip')
@@ -46,19 +17,24 @@ RM_WEEKLY = ('rm', 'weekly.html')
 
 
 # # prompt user for new directory name
-dir_name = str(input('Enter name for new directory: '))
+dir_name = str(input('Enter new directory name: '))
 
 
 # check if directory already exists
 if exists(dir_name):
     print(f'\033[31mERROR:\033[0m directory \'{dir_name}\' already exists')
+    exit()
 
 
 # get the team name
 team_name = str(input('Enter team name: '))
 
 
-# # create the new directory
+# check if user wants to generate templates for next week
+next = str(input('Generate templates for next week? (y/n)')) == 'y'
+
+
+# create the new directory
 mkdir(dir_name)
 
 
