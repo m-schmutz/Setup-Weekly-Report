@@ -1,5 +1,24 @@
 gen_templates.py: Generates template html files for the daily and weekly reports
 
-Script will prompt user for a directory name in which the template files will be placed
+When running script you will be prompted for 3 things: directory name, team name, current or next weekly
 
-Next, the user will be prompted for a team name to fill in the template files
+Prompt -> Enter new directory name: 
+    - name entered will be used to create a new directory in which the template files will be stored
+    - If the directory name already exists, Error will occur and script will exit
+
+Prompt -> Enter team name: 
+    - Team name entered will be used to paste into template files
+
+Prompt -> Generate templates for next week? (y/n): 
+    - if input is 'y', the template files created will be generated for the following week
+    - if input is 'n', the template files created will be generated for the current week
+
+    More info:
+        - A week is considered to be from Sunday to Saturday
+            For example: 
+                - for the week November 6, 2022 - November 12, 2022, all dates in that range will be considered the same week
+
+                - if gen_templates.py was ran within that date range and input was 'n', the template files generated will also be for that date range
+
+                - if gen_templates.py was ran within that date range and input was 'y', the template files generated will be for the following week (November 13, 2022 - November 19, 2022)
+            

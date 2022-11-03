@@ -31,7 +31,7 @@ team_name = str(input('Enter team name: '))
 
 
 # check if user wants to generate templates for next week
-next = str(input('Generate templates for next week? (y/n)')) == 'y'
+next = str(input('Generate templates for next week? (y/n): ')) == 'y'
 
 
 # create the new directory
