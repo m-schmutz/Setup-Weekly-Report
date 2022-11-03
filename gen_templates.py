@@ -71,11 +71,11 @@ year, week_number = datetime.now().isocalendar()[:2]
 
 
 # create a tuple of the days of the week
-days_of_week = tuple(datetime.fromisocalendar(year, week_number, i).strftime('%B %-d, %Y') for i in range(1, 6))
+days_of_week = tuple(datetime.fromisocalendar(year, week_number+next, i).strftime('%B %-d, %Y') for i in range(1, 6))
 
 
 # create a tuple of the file names for each html file
-date_file_names = tuple(datetime.fromisocalendar(year, week_number, i).strftime('%-m-%-d') for i in range(1, 6))
+date_file_names = tuple(datetime.fromisocalendar(year, week_number+next, i).strftime('%-m-%-d') for i in range(1, 6))
 
 
 # open the 'daily.html' file with read permissions only
