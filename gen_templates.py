@@ -3,6 +3,8 @@ from subprocess import run
 from datetime import datetime
 from re import sub
 from os import mkdir
+from os.path import exists
+from sys import argv
 
 
 # commands for unzipping the templates
@@ -19,7 +21,12 @@ RM_WEEKLY = ('rm', 'weekly.html')
 dir_name = str(input('Enter name for new directory: '))
 
 
-# # get the team name
+# check if directory already exists
+if exists(dir_name):
+    print(f'\033[31mERROR:\033[0m directory \'{dir_name}\' already exists')
+
+
+# get the team name
 team_name = str(input('Enter team name: '))
 
 
