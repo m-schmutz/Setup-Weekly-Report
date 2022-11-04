@@ -6,6 +6,10 @@ from os import mkdir
 from os.path import exists
 from sys import exit
 
+def datestr(year:int, weeknum:int, daynum:int) -> str:
+    return datetime.fromisocalendar(year, weeknum, daynum).strftime("%B %-d, %Y")
+
+
 # commands for unzipping the templates
 UNZIP_DAILY = ('unzip', 'daily.zip')
 UNZIP_WEEKLY = ('unzip', 'weekly.zip')
@@ -29,9 +33,14 @@ if exists(dir_name):
 # get the team name
 team_name = str(input('Enter team name: '))
 
+# get the current week number and year
+year, week_number = datetime.now().isocalendar()[:2]
 
-# check if user wants to generate templates for next week
-next = str(input('Generate templates for next week? (y/n): ')) == 'y'
+
+print('Select week to generate templates for:')
+print(f'1: {datestr(year, week_number, 1)} - {datestr(year, week_number, 5)}')
+print(f'2: {datestr(year, week_number + 1, 1)} - {datestr(year, week_number+1, 5)}')
+increment = int(input('> ')) - 1
 
 
 # create the new directory
@@ -42,17 +51,12 @@ mkdir(dir_name)
 run(UNZIP_DAILY)
 run(UNZIP_WEEKLY)
 
-
-# get the current week number and year
-year, week_number = datetime.now().isocalendar()[:2]
-
-
 # create a tuple of the days of the week
-days_of_week = tuple(datetime.fromisocalendar(year, week_number+next, i).strftime('%B %-d, %Y') for i in range(1, 6))
+days_of_week = tuple(datestr(year, week_number+increment, i) for i in range(1, 6))
 
 
 # create a tuple of the file names for each html file
-date_file_names = tuple(datetime.fromisocalendar(year, week_number+next, i).strftime('%-m-%-d') for i in range(1, 6))
+date_file_names = tuple(datestr(year, week_number+increment, i) for i in range(1, 6))
 
 
 # open the 'daily.html' file and read its contents
