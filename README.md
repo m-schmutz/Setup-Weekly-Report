@@ -42,7 +42,7 @@ Select week to generate templates for:
 
 ### Example picking week:
 
-#### If the current date is November 6, 2022, the options printed out for week will be:
+#### If the current date is November 6, 2022, the options printed out for week used will be:
 ```
 Select week to generate templates for:
 1: November 7, 2022 - November 11, 2022
