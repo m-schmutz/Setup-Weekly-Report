@@ -17,7 +17,7 @@
 Enter directory name to store templates:
 ```
 
-#### The input given will be used to create a new directory in the current directory that will store all of the templates.
+#### The name entered will be used to create a new directory in the current directory that will store the newly generated templates.
 #### If the name given already exists in the current directory, an error is raised and the script will exit.
 
 ### Team Name
@@ -26,7 +26,7 @@ Enter directory name to store templates:
 Enter team name:
 ```
 
-#### The input given will be used as the team name in the generated templates
+#### The name given will be used as the team name in the generated templates
 
 ### Week 
 #### To get the week used in the templates, the script will ask whether the current or next week should be used:
@@ -38,10 +38,7 @@ Select week to generate templates for:
 2: <Month> <Day>, <Year> - <Month> <Day>, <Year> # following week
 ```
 
-#### The corresponding month name, day, and year will be printed for each date. 
-* Entering 1 will generate templates for the current week
-* Entering 2 will generate templates for the following week
-
+#### The corresponding month name, day, and year will be printed for each date. To pick a week enter the number next to desired week
 
 ### Example picking week:
 

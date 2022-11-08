@@ -1,24 +1,17 @@
-gen_templates.py: Generates template html files for the daily and weekly reports
+This is a quick README for the gen_templates.py script
+A more complete README can be found here: https://github.com/m-schmutz/Setup-Weekly-Report
 
-When running script you will be prompted for 3 things: directory name, team name, current or next weekly
+Running Script:
+- if executible: './gen_templates.py'
+- Otherwise: 'python3 gen_templates.py'
 
-Prompt -> Enter new directory name: 
-    - name entered will be used to create a new directory in which the template files will be stored
-    - If the directory name already exists, Error will occur and script will exit
 
-Prompt -> Enter team name: 
-    - Team name entered will be used to paste into template files
+Input: 
+- directory name: This will be used to create a new directory (in the pwd) that will store the newly generated templates.
 
-Prompt -> Generate templates for next week? (y/n): 
-    - if input is 'y', the template files created will be generated for the following week
-    - if input is 'n', the template files created will be generated for the current week
+- Team name: This will be used as the team name for all of the templates (Will replace {TEAM NAME} in templates with input)
 
-    More info:
-        - A week is considered to be from Sunday to Saturday
-            For example: 
-                - for the week November 6, 2022 - November 12, 2022, all dates in that range will be considered the same week
+- Week: 
+    + Two weeks will be printed out, the first being the current week and the second being the following week.
+    + Input number next to week that you want to use for the templates
 
-                - if gen_templates.py was ran within that date range and input was 'n', the template files generated will also be for that date range
-
-                - if gen_templates.py was ran within that date range and input was 'y', the template files generated will be for the following week (November 13, 2022 - November 19, 2022)
-            
