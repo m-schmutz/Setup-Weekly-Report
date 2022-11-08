@@ -55,7 +55,7 @@ def week_info() -> tuple:
 
 
 # prompt user for new directory name
-dir_name = str(input('Enter new directory name: '))
+dir_name = str(input('Enter directory name to store templates: '))
 
 
 # check if directory already exists
