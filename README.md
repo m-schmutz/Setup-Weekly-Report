@@ -39,8 +39,8 @@ Select week to generate templates for:
 ```
 
 #### The corresponding month name, day, and year will be printed for each date. 
-#### Entering 1 will generate templates for the current week
-#### Entering 2 will generate templates for the following week
+* Entering 1 will generate templates for the current week
+* Entering 2 will generate templates for the following week
 
 
 ### Example picking week:
@@ -52,7 +52,7 @@ Select week to generate templates for:
 2: November 14, 2022 - November 18, 2022
 ```
 
-#### *If user enters 1, the templates will be generated for November 7, 2022 through November 11, 2022*
+* *If user enters 1, the templates will be generated for November 7, 2022 through November 11, 2022*
 
-#### *If user enters 2, the templates will be generated for November 14, 2022 through November 18, 2022*
+* *If user enters 2, the templates will be generated for November 14, 2022 through November 18, 2022*
 
