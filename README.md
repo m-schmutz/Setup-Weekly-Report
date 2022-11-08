@@ -8,7 +8,7 @@
 #### Otherwise it can be ran with python3: `$ python3 gen_templates.py`.
 
 ## Input
-### Once ran the script will input for 3 things: 
+### Once ran, the script will prompt for for 3 things: 
 
 ### Directory Name
 
