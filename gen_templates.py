@@ -46,7 +46,7 @@ def week_info() -> tuple:
     # attempt to return the requested week
     try:
         week = int(input('> '))
-        print(f'{options[week] = }')
+        return options[week]
 
     # quit if invalid option is given
     except:
